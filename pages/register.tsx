@@ -93,19 +93,19 @@ const Register: React.FC = () => {
             <div className="form-container">
                 <h1>Register</h1>
                 <label>Username:</label>
-                <input type="text" onChange={(e) => setUsername(e.target.value)} required /><br /><br />
+                <input type="text" className="action-Username" onChange={(e) => setUsername(e.target.value)} required /><br /><br />
 
                 <label>Password:</label>
-                <input type="password" onChange={(e) => setPassword(e.target.value)} required /><br /><br />
+                <input type="password" className="action-Password" onChange={(e) => setPassword(e.target.value)} required /><br /><br />
 
                 <label>Email:</label>
-                <input type="text" onChange={(e) => setEmail(e.target.value)} required /><br /><br />
+                <input type="text" className="action-Email" onChange={(e) => setEmail(e.target.value)} required /><br /><br />
 
                 <label>Profile image:</label>
                 <Upload setFormData={setSelectedFileFormData} /><br /><br />
 
                 {!isUploading ?
-                    <button disabled={username=="" || password=="" || email==""} onClick={() => { register(username, password, email, setUser, router, selectedFileFormData, setIsUploading) }}>Register</button>
+                    <button className="action-RegisterButton" disabled={username=="" || password=="" || email==""} onClick={() => { register(username, password, email, setUser, router, selectedFileFormData, setIsUploading) }}>Register</button>
                     :
                     <div className="spinner-container">
                         <div className="loading-spinner">

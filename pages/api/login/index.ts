@@ -25,7 +25,7 @@ export default async function handle(req: NextApiRequest, res: NextApiResponse) 
             email: userInDatabase.email
         }
 
-        const token = jwt.sign(userForToken, process.env.SECRET, { expiresIn: 10 }) //TODO change from 10 secs
+        const token = jwt.sign(userForToken, process.env.SECRET, { expiresIn: 360 })
 
         res
             .status(200)

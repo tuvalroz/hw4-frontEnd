@@ -82,6 +82,7 @@ const Draft: React.FC = () => {
         <form onSubmit={submitData}>
           <h1>New Draft</h1>
           <input
+            className="action-Title"
             ref={ref}
             onChange={(e) => setTitle(e.target.value)}
             placeholder="Title"
@@ -89,6 +90,7 @@ const Draft: React.FC = () => {
             value={title}
           />
           <textarea
+            className="action-Content"
             cols={50}
             onChange={(e) => setContent(e.target.value)}
             placeholder="Content"
@@ -98,7 +100,7 @@ const Draft: React.FC = () => {
           <Upload setFormData={setSelectedFileFormData} />
           <br />
           {!isUploading ?
-            <input disabled={!content || !title} type="submit" value="Create" />
+            <input className="action-CreateButton" disabled={!content || !title} type="submit" value="Create" />
             :
             <div className="spinner-container">
               <div className="loading-spinner">

@@ -69,9 +69,6 @@ const Profile: React.FC = () => {
                 {user.imageUrl != "" && <div><label>Profile picture : </label><img src={user.imageUrl} height="150px" width="150px"/></div>}
                 <button onClick={() => setIsEditingPicture(!isEditingPicture)}>{isEditingPicture ? "Cancel editing profile picture" : "Add/Change profile picture"}</button><br /><br />
                 {isEditingPicture && <div><Upload setFormData={setSelectedFileFormData} /><br/><button onClick={()=>ChangeProfileHandler(selectedFileFormData,user,router)}>submit</button></div>}
-                
-
-
             </div>
             <style jsx>{`
                 label {

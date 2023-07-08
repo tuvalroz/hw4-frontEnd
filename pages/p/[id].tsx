@@ -73,7 +73,7 @@ const Post: React.FC<Props> = (props) => {
         {props.post.videoUrl &&
           <div> <video src={props.post.videoUrl} autoPlay={true} loop={true} />  <br /> </div>}
         {!props.post.published && userHasValidSession && postBelongsToUser && (
-          <button onClick={() => publishPost(props.post.id)}>Publish</button>
+          <button className="action-PublishButton" onClick={() => publishPost(props.post.id)}>Publish</button>
         )}
         {userHasValidSession && postBelongsToUser && (
           <button onClick={() => deletePost(props.post.id)}>Delete</button>

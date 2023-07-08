@@ -169,12 +169,12 @@ const Header: React.FC = () => {
           {user?.username} ({user?.email})
         </p>
         <Link href="/create" legacyBehavior>
-          <button>
+          <button className="action-NewPostButton">
             <a>New post</a>
           </button>
         </Link>
         <Link href="/profile" legacyBehavior>
-          <button>
+          <button className="action-ProfileButton">
             <a>Profile</a>
           </button>
         </Link>
