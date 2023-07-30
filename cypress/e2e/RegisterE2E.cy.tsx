@@ -3,6 +3,7 @@ describe('Register.cy.tsx', () => {
   it('Registering to the system', () => {
     cy.visit('http://localhost:3000/')
     cy.contains('Sign up').click()
+    cy.wait(500);
     cy.url().should('include', '/register')
 
     // Get an input, type into it
