@@ -7,9 +7,9 @@ import { getVideosUrl } from "../mongo/mongo";
 import userContext from "../components/userContext";
 const jwt = require('jsonwebtoken')
 import jwtDecode from "jwt-decode";
+import { setup } from "../lib/csrf";
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { req } = context;
+export const getServerSideProps = setup(async (req) => {
   const token = req.headers.cookie?.split(';')
     .find((cookie) => cookie.trim().startsWith('FrontEndToken=')) 
     ?.split('=')[1];
@@ -37,7 +37,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   return {
     props: { drafts, urls },
   };
-};
+});
 
 type Props = {
   drafts: PostProps[];
